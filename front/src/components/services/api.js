@@ -26,8 +26,8 @@ api.interceptors.response.use(function (response) {
 export const baseBackURL =  process.env.REACT_APP_BASE;
 
 // GET ALL PRODUCTS
-export const getAllProductsFunction = async (id) => {
-  return api.get("/products/details/" + id);
+export const getAllProductsFunction = async () => {
+  return api.get("/products/details");
 }
 // ADD NEW PRODUCT
 export const addProductFunction = async (data) => {
