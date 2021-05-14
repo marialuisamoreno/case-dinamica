@@ -1,0 +1,38 @@
+.logoAnimate{
+    stroke-dasharray: 500;
+    stroke-dashoffset: 1500;
+    -webkit-animation: logoAnimateDraw 3000ms linear infinite;
+    animation: logoAnimateDraw 3000ms linear infinite;
+}
+
+.maskLogoBig{
+  text-align: center;
+}
+  
+  @-webkit-keyframes logoAnimateDraw {
+    0% {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 1500; }
+    45% {
+      stroke-dasharray: 740;
+      stroke-dashoffset: 1500; }
+    55% {
+      stroke-dasharray: 740;
+      stroke-dashoffset: 1500; }
+    100% {
+      stroke-dasharray: 980;
+      stroke-dashoffset: 1500; } }
+  
+  @keyframes logoAnimateDraw {
+    0% {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 1500; }
+    45% {
+      stroke-dasharray: 740;
+      stroke-dashoffset: 1500; }
+    55% {
+      stroke-dasharray: 740;
+      stroke-dashoffset: 1500; }
+    100% {
+      stroke-dasharray: 980;
+      stroke-dashoffset: 1500; } }
