@@ -1,32 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { isAuthenticated } from './services/auth';
-
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Products from './pages/products/products';
+import AddProducts from './pages/products/add';
 import ProductsDetails from './pages/products/products-details';
 import Catalog from './pages/client/catalog';
 
-const PrivateRoute = ({ component: Component, ...rest }) => (        
-    <Route {...rest} render={
-        props => (            
-            isAuthenticated() ? (
-                <Component {...props} />
-            ) : (
-                    <Redirect to={{ pathname: '/', state: { from: props.location } }} />
-                )            
-        )
-    } />    
-)
-
 const Routes = () => (
-
     <BrowserRouter basename="/front">
         <Switch>
-            <Route exact path="/client" component={Catalog} />
-
-            <PrivateRoute exact path="/adm" component={Products} />
-            <PrivateRoute exact path="/adm/products/:id" component={ProductsDetails} />
-            <PrivateRoute exact path="/client" component={Catalog} />
+            <Route exact path="/" component={Products} />
+            <Route exact path="/products/main/products" component={Products} />
+            <Route exact path="/products/main/products/add" component={AddProducts} />
+            <Route exact path="/products/main/products-details/:id" component={ProductsDetails} />
+            <Route exact path="/client/catalog" component={Catalog} />
         </Switch>
     </BrowserRouter>
 );
