@@ -24,6 +24,7 @@
                         sizes SZ ON AP.ID_PROD = SZ.ID_PROD
                             LEFT JOIN
                         tags TG ON AP.ID_PROD = TG.ID_PROD
+                    GROUP BY AP.ID_PROD
             ";
             
             $stmt = $oci->query($sql);
