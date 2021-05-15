@@ -1,0 +1,65 @@
+.topbar{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 98;
+    background: #3D1242;
+    background: linear-gradient(to right, #3D1242 0%, #5C1864 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3D1242', endColorstr='#5C1864',GradientType=1 );
+    box-shadow: -1px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    width: 70px;
+    height: 70px;
+    background-image: url(../../../assets/img/logo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    background-size: 55px;
+}
+
+.textWelcome{    
+    right:240px;    
+    top: 27px;
+    position: absolute;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.logoutButton{
+    right: 38px;    
+    top: 18px;
+    position: absolute;
+    color: #ffffff;
+    font-size: 14px
+}
+
+.textMaintenance{
+    left: 360px;
+    top: 40px;
+    position: absolute;
+    color: #FDA50F;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.textToolName{
+    left: 90px;
+    top: 21px;
+    position: absolute;
+    color: #ffffff;    
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.downloadMenu{    
+    right: 90px;    
+    top: 18px;
+    position: absolute;
+    color: #ffffff;    
+    font-weight: bold;
+    font-size: 20px;
+}
