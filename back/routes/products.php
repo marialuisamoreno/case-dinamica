@@ -45,7 +45,6 @@ $app->post('/{environment}/api/products/save', function(Request $request, Respon
 
     if($values > 0){
         $response_data['error'] = false;
-        $response_data['ID_PRODUCT'] = $values;
         $response->write(json_encode($response_data));
         return $response
             ->withHeader('Content-type', 'application/json')

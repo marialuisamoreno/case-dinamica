@@ -6,6 +6,6 @@ export const successPackCancelled = () => {
 
 export const errorCallingAPI = () => {
     swal("API request failed", "Please, contact the Support Team.", "error").then((value) => {
-        window.location.href = "/client";
+        window.location.href = "/front";
     });
 }

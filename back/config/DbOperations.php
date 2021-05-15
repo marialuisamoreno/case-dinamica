@@ -48,7 +48,7 @@
             $stmt->bindParam(':PROMO_PRICE', $PROMO_PRICE, PDO::PARAM_INT);
             $stmt->bindParam(':EMBLEM', $EMBLEM, PDO::PARAM_STR);
             $stmt->execute();
-            $ID_PRODUCT = $oci->lastInsertId();
+            $ID_PROD = $oci->lastInsertId();
 
             // Inserting the size
             $sql = "
@@ -57,7 +57,7 @@
             ";
             
             $stmt = $oci->prepare($sql);
-            $stmt->bindParam(':ID_PROD', $ID_PRODUCT, PDO::PARAM_INT);
+            $stmt->bindParam(':ID_PROD', $ID_PROD, PDO::PARAM_INT);
             $stmt->bindParam(':SIZE', $SIZE, PDO::PARAM_STR);
             $stmt->execute();
 
@@ -68,11 +68,9 @@
             ";
             
             $stmt = $oci->prepare($sql);
-            $stmt->bindParam(':ID_PROD', $ID_PRODUCT, PDO::PARAM_INT);
+            $stmt->bindParam(':ID_PROD', $ID_PROD, PDO::PARAM_INT);
             $stmt->bindParam(':TAG', $TAG, PDO::PARAM_STR);
             $stmt->execute();
-
-            return $ID_PRODUCT;
         }
 
         public function getAllEmblems(){

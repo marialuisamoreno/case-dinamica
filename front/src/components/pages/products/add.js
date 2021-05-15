@@ -15,7 +15,7 @@ class AddProducts extends Component {
     constructor(props) {
       super(props);  
       this.state = {
-        loading: true,
+        loading: false,
         emblemDrop: [],
         statusDrop: [],
         data: [],
@@ -28,15 +28,15 @@ class AddProducts extends Component {
       if (errors.length === 0){
         this.setState({ spinnerActive: true });
         this.saveProduct(values);
-      }      
-    }
+      }
+    }        
 
     saveProduct = async(values) => {
       try {
         const response = await addProductFunction(values);
         this.setState({ spinnerActive: false });
           if (!response.error) {
-            window.location.replace('/products/main/products');
+            window.location.replace('/front/products');
           }
       }
       catch (error){
@@ -98,6 +98,10 @@ class AddProducts extends Component {
                                     <AvInput type="text" name="promo_price" id="promo_price" placeholder="Required field" maxLength={50} helpMessage="" required />
                                 </AvGroup>
                                 <AvGroup>
+                                    <Label for="promo_price">PROMOTION STATUS</Label>
+                                    <AvInput type="text" name="promo_status" id="promo_status" placeholder="Required field" maxLength={50} helpMessage="" required />
+                                </AvGroup>
+                                <AvGroup>
                                     <Label for="size">SIZE</Label>
                                     <AvInput type="text" name="size" id="size" placeholder="Required field" maxLength={50} helpMessage="" />
                                 </AvGroup>
@@ -105,19 +109,15 @@ class AddProducts extends Component {
                                     <Label for="tag">TAGS</Label>
                                     <AvInput type="text" name="tag" id="tag" placeholder="Required field" maxLength={50} helpMessage="" />
                                 </AvGroup>
+                                <AvGroup>
+                                    <Label for="tag">IMAGE FILE</Label>
+                                    <AvInput type="text" name="image_file" id="image_file" placeholder="Required field" maxLength={50} helpMessage="" />
+                                </AvGroup>
+                                <AvGroup>
+                                    <Label for="tag">EMBLEMS</Label>
+                                    <AvInput type="text" name="emblem" id="emblem" placeholder="Required field" maxLength={50} helpMessage="" />
+                                </AvGroup>
                             </AvGroup>
-                            <AvField type="select" name="emblem" label="EMBLEM" helpMessage="" required >
-                                <option value=""></option>
-                                {this.state.emblemDrop.map((v, index) => {
-                                    return <option value={v.EMBLEM}>{v.EMBLEM}</option>;
-                                })}
-                            </AvField>
-                            <AvField type="select" name="promo_status" label="EMBLEM" helpMessage="" required >
-                                <option value=""></option>
-                                {this.state.statusDrop.map((v, index) => {
-                                    return <option value={v.STATUS}>{v.STATUS}</option>;
-                                })}
-                            </AvField> 
                             <div class="col-2 mx-auto">
                             <FormGroup>                  
                             <Button                    
