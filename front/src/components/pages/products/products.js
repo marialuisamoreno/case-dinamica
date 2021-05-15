@@ -82,7 +82,7 @@ class Product extends Component {
                                         icon: c.tableIcons.Add,
                                         tooltip: 'Add Product',
                                         isFreeAction: true,
-                                        onClick: () => { window.location.replace(`products/main/products/add`) }
+                                        onClick: () => { window.location.replace(`products/add`) }
                                     }
                                 ]}    
                             /> : <div className='containerLoad'><Loading /></div>}
