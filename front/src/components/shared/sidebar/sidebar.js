@@ -20,7 +20,7 @@ class Sidebar extends Component {
           <ReactTooltip/>
           <SideNav.Nav 
             className ='sidenav---sidenav---_2tBP'>
-              <NavItem data-tip="ADM" eventKey="products" className ={pathname.match('/products') ? 'sidenav---sidenav-navitem---uwIJ- sidenav---selected---1EK3y sidenav---highlighted---oUx9u': ''}>
+              <NavItem data-tip="PRODUCTS" eventKey="products" className ={pathname.match('/products') ? 'sidenav---sidenav-navitem---uwIJ- sidenav---selected---1EK3y sidenav---highlighted---oUx9u': ''}>
                   <NavIcon>
                     <i className="icofont-document-folder font-sidebar"></i>
                   </NavIcon>
