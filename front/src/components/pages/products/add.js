@@ -47,7 +47,7 @@ class AddProducts extends Component {
     loadEmblemsDrop = async() => {
       try {
           const response = await getAllEmblemsFunction();
-          this.setState({ emblemDrop: response});
+          this.setState({ emblemDrop: response.data.result});
       }
       catch (error){
           console.log(error);
@@ -57,7 +57,7 @@ class AddProducts extends Component {
     loadStatusDrop = async() => {
         try {
             const response = await getAllStatusFunction();
-            this.setState({ statusDrop: response});
+            this.setState({ statusDrop: response.data.result});
         }
         catch (error){
             console.log(error);
@@ -97,10 +97,12 @@ class AddProducts extends Component {
                                     <Label for="promo_price">PROMOTION PRICE</Label>
                                     <AvInput type="text" name="promo_price" id="promo_price" placeholder="Required field" maxLength={50} helpMessage="" required />
                                 </AvGroup>
-                                <AvGroup>
-                                    <Label for="promo_price">PROMOTION STATUS</Label>
-                                    <AvInput type="text" name="promo_status" id="promo_status" placeholder="Required field" maxLength={50} helpMessage="" required />
-                                </AvGroup>
+                                <AvField type="select" name="promo_status" label="PROMOTION STATUS" helpMessage="" required >
+                                    <option value="">Select</option>
+                                    {this.state.statusDrop.map((v, index) => {
+                                        return <option value={v.STATUS}>{v.STATUS}</option>;
+                                    })}
+                                </AvField> 
                                 <AvGroup>
                                     <Label for="size">SIZE</Label>
                                     <AvInput type="text" name="size" id="size" placeholder="Required field" maxLength={50} helpMessage="" />
@@ -113,10 +115,12 @@ class AddProducts extends Component {
                                     <Label for="tag">IMAGE FILE</Label>
                                     <AvInput type="text" name="image_file" id="image_file" placeholder="Required field" maxLength={50} helpMessage="" />
                                 </AvGroup>
-                                <AvGroup>
-                                    <Label for="tag">EMBLEMS</Label>
-                                    <AvInput type="text" name="emblem" id="emblem" placeholder="Required field" maxLength={50} helpMessage="" />
-                                </AvGroup>
+                                <AvField type="select" name="emblem" label="EMBLEMS" helpMessage="" required >
+                                    <option value="">Select</option>
+                                    {this.state.emblemDrop.map((v, index) => {
+                                        return <option value={v.EMBLEM}>{v.EMBLEM}</option>;
+                                    })}
+                                </AvField> 
                             </AvGroup>
                             <div class="col-2 mx-auto">
                             <FormGroup>                  
